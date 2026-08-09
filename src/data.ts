@@ -101,7 +101,7 @@ export const masters: Master[] = [
     name: 'Марина Лебедева',
     specialty: 'Классический массаж · Лимфодренаж',
     experience: '9 лет практики',
-    photo: 'https://images.pexels.com/photos/6076102/pexels-photo-6076102.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    photo: '/images/massajist/Marina_Lebedeva.webp',
     bio: 'Марина находит подход к каждому телу — от первого сеанса она чувствует, где живёт напряжение. Её специализация — мягкое, но глубокое восстановление.',
     fullBio:
       'Марина родилась в Нижнем Новгороде в 1991 году и окончила медицинский колледж по специальности «медицинский массаж». Начинала карьеру в реабилитационном центре, работая с пациентами после травм, — оттуда её бережная точность и умение слушать тело. В Soul Touch Марина работает с 2020 года, специализируясь на классическом массаже и лимфодренаже.',
@@ -111,7 +111,7 @@ export const masters: Master[] = [
     name: 'Анна Соколова',
     specialty: 'SPA-ритуалы · Ароматерапия',
     experience: '7 лет практики',
-    photo: 'https://images.pexels.com/photos/3865545/pexels-photo-3865545.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    photo: '/images/massajist/Anna_Sokolova.webp',
     bio: 'Анна создаёт ритуалы, в которых время замедляется. Она подбирает масла и ароматы под настроение гостя и превращает каждый сеанс в личное путешествие.',
     fullBio:
       'Анна родилась в Казани в 1993 году. Училась на косметолога, но по-настоящему увлеклась ароматерапией и SPA-ритуалами во время полуторагодовой стажировки на Бали, где практиковала у местных мастеров. Вернувшись, она принесла в Soul Touch философию медленных ритуалов — с маслами, ароматами и вниманием к каждой детали.',
@@ -216,6 +216,46 @@ export const masters: Master[] = [
     fullBio:
       'Виктория родилась в Краснодаре в 1994 году. Получила медицинское образование и несколько лет работала медсестрой, прежде чем полностью посвятить себя массажу — сначала в клинике эстетической медицины, а затем самостоятельно. Она специализируется на лимфодренаже и антицеллюлитных программах, помогая телу восстановить лёгкость. В Soul Touch Виктория работает с 2023 года.',
   },
+  {
+    id: 'genadiy',
+    name: 'Геннадий Букин',
+    specialty: 'Классический массаж · Мануальные техники',
+    experience: '25 лет практики',
+    photo: '/images/massajist/Genadiy_Bukin.webp',
+    bio: 'Геннадий — мастер старой школы: его массаж построен на медицинской точности и десятилетиях практики. Он находит именно ту точку, которая снимает боль, о которой вы, возможно, молчали годами.',
+    fullBio:
+      'Геннадий родился в Москве в 1971 году. Окончил медицинский колледж по специальности «медицинский массаж и мануальная терапия» и больше двадцати пяти лет проработал в клиниках реабилитационной медицины, помогая пациентам восстанавливаться после операций и травм позвоночника. В Soul Touch Геннадий с 2021 года — его сдержанная, медицинская точность стала опорой для гостей, которым нужен не просто расслабляющий, а по-настоящему рабочий массаж.',
+  },
+  {
+    id: 'islam',
+    name: 'Ислам Абдулаев',
+    specialty: 'Спортивный массаж · Глубокая работа с мышцами',
+    experience: '13 лет практики',
+    photo: '/images/massajist/Islam_Abdulaev.webp',
+    bio: 'Ислам вырос в спортивной семье и с юности занимался борьбой — травмы привели его в мир восстановительного массажа. Его глубокая, уверенная работа с мышцами особенно ценится теми, кто активно тренируется.',
+    fullBio:
+      'Ислам родился в Махачкале, Дагестан, в 1989 году. С детства занимался вольной борьбой на профессиональном уровне, а после завершения спортивной карьеры прошёл обучение спортивному и медицинскому массажу в Москве. Работал с борцами и боксёрами, помогая им восстанавливаться между соревнованиями. В Soul Touch с 2022 года Ислам применяет силу и точность спортивной школы в работе с самыми сложными зажимами.',
+  },
+  {
+    id: 'vera',
+    name: 'Вера Борочук',
+    specialty: 'Классический массаж · SPA-ритуалы',
+    experience: '3 года практики',
+    photo: '/images/massajist/Vera_Borochuk.webp',
+    bio: 'Вера пришла в профессию из косметологии и быстро поняла, что её призвание — работа руками. Её массаж мягкий, но ощутимо эффективный, а улыбка располагает с первой встречи.',
+    fullBio:
+      'Вера родилась в Минске в 1997 году. Училась на косметолога, но во время стажировки в спа-отеле на балтийском побережье увлеклась классическим массажем и SPA-ритуалами и решила посвятить себя именно этому направлению. В Москву переехала в 2023 году и вскоре присоединилась к команде Soul Touch, где быстро завоевала любовь гостей своей теплотой и вниманием к деталям.',
+  },
+  {
+    id: 'violeta',
+    name: 'Виолета Крапива',
+    specialty: 'Ароматерапия · SPA-ритуалы',
+    experience: '9 лет практики',
+    photo: '/images/massajist/Violeta_Krapiva.webp',
+    bio: 'Виолета создаёт ритуалы на стыке ароматерапии и телесных практик — её сеансы похожи на маленькое путешествие. Она чувствует, какой аромат и какой ритм нужны именно сегодня.',
+    fullBio:
+      'Виолета родилась в Гродно, Беларусь, в 1990 году. Изучала ароматерапию и фитотерапию, много лет практиковала в семейном спа-центре, а затем несколько лет путешествовала по Азии, изучая местные ритуалы работы с телом. В Soul Touch Виолета с 2023 года — она составляет индивидуальные ароматические композиции для каждого гостя и превращает обычный массаж в осознанный ритуал.',
+  },
 ];
 
 export type Review = {
@@ -293,18 +333,41 @@ export type GalleryImage = {
 };
 
 export const galleryImages: GalleryImage[] = [
-  { src: 'https://images.pexels.com/photos/18120174/pexels-photo-18120174.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Мастера за работой в массажном кабинете', span: 'md:row-span-2' },
-  { src: 'https://images.pexels.com/photos/19666192/pexels-photo-19666192.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Ароматерапия и массаж в SPA-зоне', span: '' },
-  { src: 'https://images.pexels.com/photos/6628701/pexels-photo-6628701.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Работа с телом на массажном столе', span: '' },
-  { src: 'https://images.pexels.com/photos/6628649/pexels-photo-6628649.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Полное расслабление в спа-кабинете', span: 'md:row-span-2' },
-  { src: 'https://images.pexels.com/photos/19641816/pexels-photo-19641816.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Массажное масло на спине', span: '' },
-  { src: 'https://images.pexels.com/photos/6186738/pexels-photo-6186738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Расслабляющая атмосфера кабинета', span: '' },
-  { src: 'https://images.pexels.com/photos/9146372/pexels-photo-9146372.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Крупный план расслабляющего массажа', span: '' },
-  { src: 'https://images.pexels.com/photos/4599377/pexels-photo-4599377.jpeg?auto=compress&cs=tinysrgb&h=650&w=940', alt: 'Мастер за работой на кушетке', span: '' },
+  { src: '/images/massaj/4.webp', alt: 'Массаж на террасе у водопада', span: 'md:row-span-2' },
+  { src: '/images/massaj/5.webp', alt: 'Расслабляющий массаж лица со свечами', span: '' },
+  { src: '/images/massaj/6.webp', alt: 'Масла, соль и цветы для SPA-ритуала', span: '' },
+  { src: '/images/massaj/7.webp', alt: 'Расслабляющий массаж ног у свечей', span: '' },
+  { src: '/images/massaj/8.webp', alt: 'Парная тайская церемония при свечах', span: 'md:row-span-2' },
+  { src: '/images/massaj/9.webp', alt: 'Традиционный тайский массаж на мате', span: '' },
+  { src: '/images/massaj/11.webp', alt: 'Массажное масло стекает на ладонь', span: '' },
+  { src: '/images/massaj/13.webp', alt: 'Свечи, полотенца и масла на подносе', span: '' },
+  { src: '/images/massaj/14.webp', alt: 'Стоун-терапия при свечах', span: 'md:row-span-2' },
+  { src: '/images/massaj/15.webp', alt: 'Массаж спины в романтической обстановке', span: '' },
+  { src: '/images/massaj/17.webp', alt: 'Расслабляющая ванночка для ног', span: '' },
+  { src: '/images/massaj/18.webp', alt: 'Уход за стопами с массажным маслом', span: '' },
+  { src: '/images/massaj/19.webp', alt: 'Аромамист для ног у окна', span: '' },
+  { src: '/images/massaj/20.webp', alt: 'Грязевое обёртывание спины', span: 'md:row-span-2' },
+  { src: '/images/massaj/22.webp', alt: 'Пилинг спины перед массажем', span: '' },
+  { src: '/images/massaj/23.webp', alt: 'Массаж спины с тёплым маслом', span: '' },
+  { src: '/images/massaj/24.webp', alt: 'Стоун-терапия для гостя', span: '' },
+  { src: '/images/massaj/25.webp', alt: 'Массаж плеч при свечах', span: 'md:row-span-2' },
+  { src: '/images/massaj/26.webp', alt: 'Массаж стоп крупным планом', span: '' },
+  { src: '/images/massaj/27.webp', alt: 'Точечный массаж спины', span: '' },
+  { src: '/images/massaj/30.webp', alt: 'Ароматические масла и полотенца', span: '' },
+];
+
+// Curated collage shown in the "Философия" section.
+export const philosophyGallery: { src: string; alt: string }[] = [
+  { src: '/images/massaj/29.webp', alt: 'Массаж у термальной купели при свечах' },
+  { src: '/images/massaj/2.webp', alt: 'Массажный кабинет с лотосовым зеркалом' },
+  { src: '/images/massaj/3.webp', alt: 'Кабинет с фреской реки и камней' },
+  { src: '/images/massaj/12.webp', alt: 'Массаж шеи и плеч среди зелени' },
+  { src: '/images/massaj/28.webp', alt: 'Классический массаж спины у окна' },
+  { src: '/images/massaj/21.webp', alt: 'Пилинг спины перед процедурой' },
 ];
 
 export const heroImage = 'https://images.pexels.com/photos/6187650/pexels-photo-6187650.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
-export const philosophyImage = 'https://images.pexels.com/photos/6188043/pexels-photo-6188043.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
+export const philosophyImage = philosophyGallery[0].src;
 export const certificateImage = 'https://images.pexels.com/photos/9146381/pexels-photo-9146381.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';
 
 /**

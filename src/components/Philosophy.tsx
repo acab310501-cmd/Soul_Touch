@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { philosophyImage } from '@/data';
-import { pexelsSized } from '@/utils/image';
+import { philosophyGallery } from '@/data';
 
 export default function Philosophy() {
+  const [main, ...rest] = philosophyGallery;
+
   return (
     <section id="philosophy" className="relative py-32 md:py-48 overflow-hidden bg-cream-100 linen-texture">
       <div className="container-luxe">
@@ -15,20 +16,33 @@ export default function Philosophy() {
           >
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl border border-gold-400/20" />
-              <div className="relative overflow-hidden rounded-3xl">
-                <img
-                  src={pexelsSized(philosophyImage, 900)}
-                  alt="Руки мастера и камни"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-[520px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-chocolate-700/40 to-transparent" />
+              <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[560px]">
+                <div className="relative col-span-2 row-span-2 overflow-hidden rounded-3xl">
+                  <img
+                    src={main.src}
+                    alt={main.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-chocolate-700/40 to-transparent" />
+                </div>
+                {rest.map((img) => (
+                  <div key={img.src} className="relative overflow-hidden rounded-2xl">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                    />
+                  </div>
+                ))}
               </div>
               <motion.div
                 animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.8, 0.5] }}
                 transition={{ duration: 6, repeat: Infinity }}
-                className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gold-400/20 blur-3xl"
+                className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-gold-400/20 blur-3xl -z-10"
               />
             </div>
           </motion.div>
