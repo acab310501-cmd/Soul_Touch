@@ -55,7 +55,7 @@ export default function MasterModal({ master, onClose, onBook }: Props) {
               <img
                 src={master.photo}
                 alt={master.name}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </div>
 

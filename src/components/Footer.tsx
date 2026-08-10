@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Instagram, Youtube, Send, MessageCircle } from 'lucide-react';
 import PrivacyModal from './PrivacyModal';
+import OfferModal from './OfferModal';
 import { contact } from '@/data';
 
 const socials = [
@@ -13,6 +14,7 @@ const socials = [
 
 export default function Footer() {
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [offerOpen, setOfferOpen] = useState(false);
 
   return (
     <footer className="relative bg-chocolate-700 text-cream-200 overflow-hidden">
@@ -116,12 +118,18 @@ export default function Footer() {
             >
               Политика конфиденциальности
             </button>
-            <a href="#" className="hover:text-gold-300 transition-colors">Оферта</a>
+            <button
+              onClick={() => setOfferOpen(true)}
+              className="hover:text-gold-300 transition-colors"
+            >
+              Оферта
+            </button>
           </div>
         </div>
       </div>
 
       <PrivacyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+      <OfferModal open={offerOpen} onClose={() => setOfferOpen(false)} />
     </footer>
   );
 }

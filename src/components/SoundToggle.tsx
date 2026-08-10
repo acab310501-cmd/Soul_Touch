@@ -2,78 +2,74 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2, VolumeX } from 'lucide-react';
 
+const TRACK_SRC = '/audio/ambient.mp3';
+const TARGET_VOLUME = 0.35;
+const FADE_MS = 1200;
+
 export default function SoundToggle() {
   const [playing, setPlaying] = useState(false);
   const [showHint, setShowHint] = useState(true);
-  const audioRef = useRef<AudioContext | null>(null);
-  const noiseRef = useRef<AudioBufferSourceNode | null>(null);
-  const gainRef = useRef<GainNode | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const fadeRef = useRef<number | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowHint(false), 6000);
     return () => clearTimeout(timer);
   }, []);
 
+  // Lazily create the <audio> element only once the visitor actually wants
+  // sound, so the track (a few MB) is never fetched on page load.
+  const getAudio = () => {
+    if (!audioRef.current) {
+      const audio = new Audio(TRACK_SRC);
+      audio.loop = true;
+      audio.preload = 'none';
+      audio.volume = 0;
+      audioRef.current = audio;
+    }
+    return audioRef.current;
+  };
+
+  const fadeTo = (target: number, onDone?: () => void) => {
+    if (fadeRef.current) cancelAnimationFrame(fadeRef.current);
+    const audio = getAudio();
+    const start = audio.volume;
+    const startTime = performance.now();
+
+    const step = (now: number) => {
+      const t = Math.min(1, (now - startTime) / FADE_MS);
+      audio.volume = start + (target - start) * t;
+      if (t < 1) {
+        fadeRef.current = requestAnimationFrame(step);
+      } else {
+        onDone?.();
+      }
+    };
+    fadeRef.current = requestAnimationFrame(step);
+  };
+
   const toggle = () => {
+    const audio = getAudio();
     if (playing) {
-      stopSound();
+      fadeTo(0, () => audio.pause());
       setPlaying(false);
     } else {
-      startSound();
+      audio.play().catch(() => {
+        // Autoplay can be blocked until a user gesture — the click here
+        // counts as one, but guard against rejected promises regardless.
+      });
+      fadeTo(TARGET_VOLUME);
       setPlaying(true);
       setShowHint(false);
     }
   };
 
-  const startSound = () => {
-    const ctx = new AudioContext();
-    audioRef.current = ctx;
-
-    const bufferSize = 2 * ctx.sampleRate;
-    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-    const data = buffer.getChannelData(0);
-
-    let lastOut = 0;
-    for (let i = 0; i < bufferSize; i++) {
-      const white = Math.random() * 2 - 1;
-      data[i] = (lastOut + 0.02 * white) / 1.02;
-      lastOut = data[i];
-      data[i] *= 3.5;
-    }
-
-    const noise = ctx.createBufferSource();
-    noise.buffer = buffer;
-    noise.loop = true;
-
-    const gain = ctx.createGain();
-    gain.gain.value = 0;
-    gain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 1.5);
-
-    const filter = ctx.createBiquadFilter();
-    filter.type = 'lowpass';
-    filter.frequency.value = 600;
-    filter.Q.value = 0.5;
-
-    noise.connect(filter);
-    filter.connect(gain);
-    gain.connect(ctx.destination);
-    noise.start();
-
-    noiseRef.current = noise;
-    gainRef.current = gain;
-  };
-
-  const stopSound = () => {
-    const ctx = audioRef.current;
-    const gain = gainRef.current;
-    if (ctx && gain) {
-      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
-      setTimeout(() => {
-        noiseRef.current?.stop();
-        ctx.close();
-      }, 600);
-    }
-  };
+  useEffect(() => {
+    return () => {
+      if (fadeRef.current) cancelAnimationFrame(fadeRef.current);
+      audioRef.current?.pause();
+    };
+  }, []);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">

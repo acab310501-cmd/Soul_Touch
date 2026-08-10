@@ -49,7 +49,7 @@ export default function Masters({ onBook }: { onBook: (masterName?: string) => v
                     alt={master.name}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-80 object-cover transition-all duration-700 group-hover:scale-105"
+                    className="w-full h-80 object-cover object-top transition-all duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-chocolate-700/70 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

@@ -92,7 +92,7 @@ export default function Reviews() {
                     alt={review.name}
                     loading="lazy"
                     decoding="async"
-                    className="h-16 w-16 rounded-full object-cover"
+                    className="h-16 w-16 rounded-full object-cover object-top"
                   />
                   <div>
                     <h4 className="font-serif text-xl text-chocolate-600">{review.name}</h4>
